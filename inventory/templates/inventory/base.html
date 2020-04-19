@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinkerer's Lab</title>
+                <link rel="icon" href="https://www.tinkerers-lab.org/images/TL1.jpg">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                <script src="https://kit.fontawesome.com/deadfff268.js" crossorigin="anonymous"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+        {% load static %}
+            <link rel="stylesheet" href="{% static 'inventory/styles.css' %}">
+        
+ {% block head %}
+ {% endblock head %}
+        
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+ <a class="navbar-brand" href="#" >
+ <img src="https://www.tinkerers-lab.org/images/TL1.jpg" style="width:40px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'index' %}">Machine Status</a>
+      </li>
+    </ul>
+  </div>
+
+  <span style="font-size: 18px;color:aqua; margin-right: 20px;">Hello, {{request.user}}</span>
+ 
+  <span ><a  style="font-size: 18px;color: aqua; margin-right: 20px;" href="{% url 'logout' %}">Logout</a></span>
+
+</nav>
+{% block body %}
+{% endblock body %}
+</body>
+</html>
